@@ -21,15 +21,23 @@ return <li class="photo-card">
 })}
 </ul>
 <style>
+	
 	ul{
 		display:grid;
 		grid-template-columns: repeat(3,1fr);
-		gap:1rem;
+		gap:.5rem;
+		/* padding: 1rem 1rem; */
+	}
+
+	@media only screen and (max-width: 768px){
+		ul{
+			grid-template-columns: repeat(1,1fr);
+	}
 	}
 	.photo-card {
 		list-style: none;
-		background:#373737;
-		min-height:20rem;
+		background:#777777;
+		min-height:30rem;
 	}
 	/*.link-card > a {*/
 	/*	width: 100%;*/

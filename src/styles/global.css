@@ -6,13 +6,19 @@
 	padding:0;
 }
 
+:root{
+--bg-main:#f7f5ee;
+}
+
 html,
 body {
 	min-height: 100%;
-	overflow-x: hidden;
+	background: #f7f5ee;
+font-family: "Poppins", sans-serif;
 }
 
 .wrapper{
 max-width:1920px;
 margin:0 auto;
+	padding: 0 1rem;
 }
