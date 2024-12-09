@@ -129,10 +129,10 @@ display: flex;
 <script>
 		const btnMenu:HTMLElement = document.getElementById("menu-tggl")!;
 		const navElement:HTMLElement = document.getElementById("nav")!;
-		const animationMenuTopOnOpen:SVGAnimationElement = document.getElementById("menu-top-line-on-open")!;
-		const animationMenuTopOnClose:SVGAnimationElement = document.getElementById("menu-top-line-on-close")!;
-		const animationMenuBottomOnOpen:SVGAnimationElement = document.getElementById("menu-bottom-line-on-open")!;
-		const animationMenuBottomOnClose:SVGAnimationElement = document.getElementById("menu-bottom-line-on-close")!;
+		const animationMenuTopOnOpen:any = document.getElementById("menu-top-line-on-open") ;
+		const animationMenuTopOnClose:any = document.getElementById("menu-top-line-on-close")!;
+		const animationMenuBottomOnOpen:any = document.getElementById("menu-bottom-line-on-open")!;
+		const animationMenuBottomOnClose:any = document.getElementById("menu-bottom-line-on-close")!;
 		btnMenu.onclick = function(){
 			if(navElement.classList.contains("open")){
 				animationMenuTopOnClose.beginElement()
