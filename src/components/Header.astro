@@ -3,7 +3,7 @@
 ---
 <header class="page-wrapper">
 <div class="logo">Monika Skierecka</div>
-<nav id="nav" class="ope">
+<nav id="nav" class="">
 	<ul class="nav-menu-list">
 			<li><a href="/">Strona Glowna</a></li>
 			<li><a href="/">Zdjecia</a></li>
@@ -18,12 +18,12 @@
 
   <!-- Example of the same polyline shape with stroke and no fill -->
   <polyline points="4,8 20,8" fill="none" stroke="currentColor" >
-  <animate id="menu-top-line-on-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 8, 20 8; 4 12, 20 12;  4 4, 20 20"></animate>
-  <animate id="menu-top-line-on-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 4, 20 20; 4 12, 20 12;  4 8, 20 8"></animate>
+  <animate id="menu-top-line-on-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 8, 20 8; 4 14, 20 6;  4 20, 20 4"></animate>
+  <animate id="menu-top-line-on-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 20, 20 4; 4 14, 20 6;  4 8, 20 8"></animate>
   </polyline>
   <polyline points="4,16 20,16" fill="none" stroke="currentColor" >
-  <animate id="menu-bottom-line-on-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 16, 20 16; 4 12, 20 12;  4 20, 20 4"></animate>
-  <animate id="menu-bottom-line-on-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 20, 20 4; 4 12, 20 12;  4 16, 20 16"></animate>
+  <animate id="menu-bottom-line-on-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 16, 20 16; 4 10, 20 18;  4 4, 20 20"></animate>
+  <animate id="menu-bottom-line-on-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 4 4, 20 20; 4 10, 20 18;  4 16, 20 16"></animate>
   </polyline>
 </svg>
 		</button>
@@ -40,7 +40,9 @@ display: flex;
 	padding: 1rem;
 	background: var(--bg-main);
 	height: 48px;
-	box-shadow: 0 0 2px black;
+	box-shadow:0 1px #b7b7b7;
+	    left: 0;
+    right: 0;
 }
 
 .logo{
@@ -59,7 +61,7 @@ nav{
 	align-items: center;
 }
 
-ul{
+ul.nav-menu-list{
 display: flex;
 	flex-direction: row;
 	list-style: none;
@@ -75,6 +77,21 @@ text-decoration: none;
 a:hover{
 	text-decoration:underline;
 }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+	@media only screen and (max-width: 1400px){
+}
+
+
+/* // X-Large devices (large desktops, 1200px and up) */
+	@media only screen and (max-width: 1200px){
+}
+
+/* // Large devices (desktops, 992px and up) */
+	@media only screen and (max-width: 992px){
+}
+
+/* // Medium devices (tablets, 768px and up) */
 	@media only screen and (max-width: 768px){
 	.menu-toggle{
 display: flex;
@@ -94,34 +111,51 @@ nav{
 	left: 0;
 			overflow: hidden;
 align-items: flex-start;
-transition: height .3s ease-in-out;
-		margin-top:48px;
+		flex-direction: column;
+ transition: height .3s ease-in-out,padding-top .3s ease-in-out,margin-top .3s ease-in-out;
+		/* margin-top:48px; */
 		background:#f7f5ee;
 }
 		nav.open{
 		height:100vh;
+padding-top: 48px;
+        margin-top: 0;
 	}
 
-	nav ul{
+	nav ul.nav-menu-list{
 display: flex;
 	flex-direction: column;
-		height:100%;
 		width: 100%;
-	margin-top: 16px;
 }
-	nav ul li{
+	nav ul.nav-menu-list li{
 		opacity: 0;
 		transition: opacity .2s ease-in;
 	}
 	 
-	nav ul li{
-		font-size: 2rem;
-		padding:.5rem 1rem;
+	nav ul.nav-menu-list li{
+		font-size: 3.5rem;
+		padding:.5rem 2rem;
 		margin: 0;
+		line-height: .9;
+		letter-spacing: -0.06ch;
+		font-weight: 600;
 	}
-	nav.open ul li{
+	nav.open ul.nav-menu-list li{
 		opacity: 1;
 	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+	@media only screen and (max-width: 576px){
+	nav ul.nav-menu-list li{
+		font-size: 3rem;
+	}
+
+	@media only screen and (max-width: 400px){
+	nav ul.nav-menu-list li{
+		font-size: 2.5rem;
+	}
+
 }
 </style>
 
