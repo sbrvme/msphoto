@@ -30,6 +30,7 @@
 </header>
 <style>
 header{
+	z-index: 1;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -52,6 +53,7 @@ display: flex;
 
 .menu-toggle{
 	display: none;
+	visibility: hidden;
 }
 
 
@@ -98,6 +100,7 @@ display: flex;
         justify-content: center;
         align-items: center;
 	z-index:2;
+		visibility: visible;
 	}
 
 	/* nav{ */
@@ -112,13 +115,15 @@ nav{
 			overflow: hidden;
 align-items: flex-start;
 		flex-direction: column;
- transition: height .3s ease-in-out,padding-top .3s ease-in-out,margin-top .3s ease-in-out;
+transition: height .3s cubic-bezier(0.65, 0.05, 0.36, 1), padding-top .3s cubic-bezier(0.65, 0.05, 0.36, 1) ;
 		/* margin-top:48px; */
-		background:#f7f5ee;
+		background:var(--bg-main);
+
 }
 		nav.open{
+		visibility: visible;
 		height:100vh;
-padding-top: 48px;
+padding-top: 64px;
         margin-top: 0;
 	}
 
@@ -129,7 +134,8 @@ display: flex;
 }
 	nav ul.nav-menu-list li{
 		opacity: 0;
-		transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in, visibility 0s ease .2s;
+		visibility: hidden;
 	}
 	 
 	nav ul.nav-menu-list li{
@@ -142,6 +148,7 @@ display: flex;
 	}
 	nav.open ul.nav-menu-list li{
 		opacity: 1;
+		visibility: visible;
 	}
 }
 

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Monika Skierecka Fotografia" description="About Jeanine White Lorem Ipsum">
+	<div class="scroll-wrapper">
+		<section style="background:#84BC9C;background-image: url('hero.jpg')">
+	</section>
+	<section style="background:#FFFDF7">
+	</section>
+	<section style="background:#F46197">
+	</section>
+	<section style="background:#0A2342">
+	</section>
+	<section style="background:#2CA58D">
+	</section>
+	</div>
+</BaseLayout>
+
+<style>
+.scroll-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+	margin-bottom: 48px;
+}
+
+section{
+	height: calc(100vh - 128px);
+	position: sticky;
+	top: 64px;
+}
+</style>
