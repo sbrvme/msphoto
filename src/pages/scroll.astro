@@ -13,9 +13,14 @@ return(
 			<div class="img-wrapper">
 			<img src="/msphoto/hero.jpg" alt="" >
 			</div>
-		<div class="section-title">
-		<h4>{title}</h4>
-		</div>
+<a href="/msphoto/galeria" class="section-title">
+<h4>
+{title}
+</h4>
+<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="3"  stroke-linecap="round"  stroke-linejoin="round">
+<path d="M 6 4 l 14 0 l 0 14" />
+<path d="M 20 4 l -16 16 M 0 0 " /></svg>
+</a>
 		<div class="section-description">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam reiciendis, est dolor tenetur unde veniam laudantium soluta similique accusamus sint repellendus veritatis vitae recusandae consectetur, aliquid ducimus. Ut, distinctio.</p>
 		</div>
@@ -39,12 +44,12 @@ return(
 }
 
 section{
-	height: calc(100vh - 128px);
+	height: calc(70vh - 128px);
 	position: sticky;
-	top: 64px;
+	top: 48px;
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(3,minmax(0,1fr));
+	grid-template-columns: minmax(0,3fr) repeat(2,minmax(0,4fr));
 	background: #FFFDF7;
     padding: 12px 0 48px 0;
 }
@@ -74,15 +79,13 @@ section:last-of-type{
 
 .section-title{
 	display: flex;
+height: min-content;
 	/* align-items: center; */
 	<!-- justify-content: center; -->
 }
 
 .section-title h4{
 	font-weight: 600;
-color: #101010;
-	line-height: 1.1;
-letter-spacing: -0.06ch;
 }
 
 <!-- .section-description p{ -->
@@ -108,9 +111,9 @@ letter-spacing: -0.06ch;
 
 /* // Medium devices (tablets, 768px and up) */
 	@media only screen and (max-width: 768px){
-//section{
-//height: calc(70vh - 128px);
-//}
+section{
+height: calc(50vh - 128px);
+}
 	}
 
 /* // Small devices (landscape phones, 576px and up) */
