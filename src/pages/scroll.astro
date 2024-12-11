@@ -1,18 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const sectionTitles=["Sesje wizerunkowe","Sesje okolicznosciowe","Sesje rodzinne","Sesje dzieciece","Sesje narzeczenskie","Sesje ciazowe","Sesje produktowe","Sesje przedszkolne"]
 ---
 <BaseLayout title="Monika Skierecka Fotografia" description="About Jeanine White Lorem Ipsum">
-	<div class="scroll-wrapper">
-		<section style="background:#84BC9C;background-image: url('/msphoto/hero.jpg')">
+	<!-- <div class="scroll-wrapper"> -->
+	<!-- 	<section style="background:#84BC9C;background-image: url('/msphoto/hero.jpg')"> -->
+	<!-- </section> -->
+{
+sectionTitles.map(title=>{
+return(
+	<section >
+			<div class="img-wrapper">
+			<img src="/msphoto/hero.jpg" alt="" >
+			</div>
+		<div class="section-title">
+		<h4>{title}</h4>
+		</div>
+		<div class="section-description">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam reiciendis, est dolor tenetur unde veniam laudantium soluta similique accusamus sint repellendus veritatis vitae recusandae consectetur, aliquid ducimus. Ut, distinctio.</p>
+		</div>
 	</section>
-	<section style="background:#FFFDF7">
-	</section>
-	<section style="background:#F46197">
-	</section>
-	<section style="background:#0A2342">
-	</section>
-	<section style="background:#2CA58D">
-	</section>
+)
+})
+}
+		<!-- style="background:#F46197" -->
+		<!-- style="background:#0A2342" -->
+		<!-- style="background:#2CA58D" -->
 	</div>
 </BaseLayout>
 
@@ -20,13 +33,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .scroll-wrapper{
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    /* gap: 24px; */
 	margin-bottom: 48px;
+	margin-top: 1rem;
 }
 
 section{
 	height: calc(100vh - 128px);
 	position: sticky;
 	top: 64px;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3,minmax(0,1fr));
+	background: #FFFDF7;
+    padding: 12px 0 48px 0;
 }
+
+section:not(:first-of-type){
+	box-shadow: 0 -1px #b7b7b7;
+}
+
+section:last-of-type{
+	height: calc(100vh - 112px);
+	margin-bottom: 3rem;
+}
+
+.img-wrapper{
+	    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+}
+
+.img-wrapper img{
+	width: 100%;
+    <!-- height: 100%; -->
+    object-fit: cover;
+}
+
+.section-title{
+	display: flex;
+	/* align-items: center; */
+	<!-- justify-content: center; -->
+}
+
+.section-title h4{
+	font-weight: 600;
+color: #101010;
+	line-height: 1.1;
+letter-spacing: -0.06ch;
+}
+
+<!-- .section-description p{ -->
+<!-- font-size: 1.15rem; -->
+<!-- color:#303030; -->
+<!-- line-height: 1.15; -->
+<!-- letter-spacing: -0.03ch; -->
+<!-- } -->
+
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+	@media only screen and (max-width: 1400px){
+}
+
+
+/* // X-Large devices (large desktops, 1200px and up) */
+	@media only screen and (max-width: 1200px){
+}
+
+/* // Large devices (desktops, 992px and up) */
+	@media only screen and (max-width: 992px){
+}
+
+/* // Medium devices (tablets, 768px and up) */
+	@media only screen and (max-width: 768px){
+section{
+height: calc(70vh - 128px);
+}
+	}
+
+/* // Small devices (landscape phones, 576px and up) */
+	@media only screen and (max-width: 576px){
+section{
+grid-template-columns: minmax(0,1fr);
+}
+	}
+
+	@media only screen and (max-width: 400px){
+	}
 </style>

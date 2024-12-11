@@ -7,7 +7,8 @@
 }
 
 :root {
-  --bg-main: #f7f5ee;
+  /* --bg-main: #f7f5ee; */
+  --bg-main: #fffdf7;
   --nav-height: 48px;
 }
 
@@ -16,7 +17,7 @@ body {
   min-height: 100%;
   background: var(--bg-main);
   font-family: "Poppins", sans-serif;
-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 .no-scroll {
@@ -38,4 +39,87 @@ button {
 
 main.page-wrapper {
   padding-top: var(--nav-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.1;
+  letter-spacing: -0.06ch;
+}
+
+h1 {
+  font-size: 5.61rem;
+}
+
+h2 {
+  font-size: 4.209rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 3.157rem;
+}
+
+h4 {
+  font-size: 2.369rem;
+}
+
+h5 {
+  font-size: 1.777rem;
+}
+
+h6 {
+  font-size: 1.333rem;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: #303030;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media only screen and (max-width: 1400px) {
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  h4 {
+    font-size: 1.777rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  h4 {
+    font-size: 1.333rem;
+  }
+  /* p { */
+  /*   font-size: 0.563rem; */
+  /* } */
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) {
+}
+
+@media only screen and (max-width: 400px) {
+  /* h2+p{ */
+  /* 	font-size: 1.25rem; */
+  /* } */
 }
