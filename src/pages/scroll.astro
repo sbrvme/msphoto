@@ -127,3 +127,17 @@ height: calc(100vh - 128px);
 	@media only screen and (max-width: 400px){
 	}
 </style>
+
+<script is:inline src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script is:inline>
+
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
+</script>
