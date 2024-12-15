@@ -1,3 +1,62 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-UltraLight.woff2') format('woff2'),
+        url('fonts/Butler-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-Medium.woff2') format('woff2'),
+        url('fonts/Butler-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-Light.woff2') format('woff2'),
+        url('fonts/Butler-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-Black.woff2') format('woff2'),
+        url('fonts/Butler-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-Bold.woff2') format('woff2'),
+        url('fonts/Butler-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler-ExtraBold.woff2') format('woff2'),
+        url('fonts/Butler-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('fonts/Butler.woff2') format('woff2'),
+        url('fonts/Butler.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ----------------- */
+
 *,
 *::after,
 *::before {
@@ -9,14 +68,15 @@
 :root {
   /* --bg-main: #f7f5ee; */
   --bg-main: #fffdf7;
-  --nav-height: 48px;
+  --navbar-height: 48px;
 }
 
 html,
 body {
   min-height: 100%;
   background: var(--bg-main);
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+	font-family: 'Butler',serif;
   touch-action: manipulation;
   color: #262626;
 }
@@ -67,6 +127,7 @@ h1 {
 h2 {
   font-size: 4.209rem;
   font-weight: 600;
+	font-family: 'Butler',serif;
 }
 
 h3 {
@@ -93,6 +154,13 @@ p {
 
 small {
   font-size: 0.75rem;
+}
+
+.grid-12c{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 1rem;
+    gap: 1rem;
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */

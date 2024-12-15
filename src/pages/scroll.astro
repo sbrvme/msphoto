@@ -46,7 +46,7 @@ return(
 section{
 	height: calc(70vh - 128px);
 	position: sticky;
-	top: 48px;
+	top: var(--navbar-height);
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: minmax(0,3fr) repeat(2,minmax(0,4fr));
@@ -137,7 +137,7 @@ const lenis = new Lenis({
 });
 
 // Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
+// lenis.on('scroll', (e) => {
+//   console.log(e);
+// });
 </script>
