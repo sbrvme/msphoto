@@ -1,0 +1,123 @@
+---
+import { Image } from 'astro:assets';
+import img from '../../public/hero.jpg';
+---
+<div id="shift"></div>
+<section class="carousel-auto" id="hero-carousel">
+<div class="wrp">
+{[0,1].map(_=>{
+		const images = [0,1,2,3,4,5,6,7,8,9].map(_=>{
+return (
+	<div class="img-wrapper">
+	<Image src={img} alt="A bird sitting on a nest of eggs." />
+	</div>
+	)
+	})
+return(
+		<div class={"slide"}>{images}</div>
+
+	)}	)	}
+	</div>
+	<button id="carousel-controls">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="pause">
+ <line stroke="currentColor"  y2="15" x2="5" y1="1" x1="5" fill="none"/><line stroke="currentColor"  id="svg_2" y2="15" x2="11" y1="1" x1="11" fill="none"/>
+	</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"  class="resume" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" >
+  <polygon points="3 1 15 8 3 15 3 1" ></polygon>
+</svg>
+	</button>
+</section>
+
+
+<style>
+.carousel-auto{
+	--slide-shift:0px;
+    overflow: hidden;
+    position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items:end;
+	margin-bottom: 5rem; /* remove after*/
+    gap: 0.5rem;
+}
+.carousel-auto .wrp{
+    display: flex;
+	width: 100%;
+}
+
+.carousel-auto .wrp .slide{
+	display: flex;
+	transform: translate3d(var(--slide-shift),0,0);
+	transition:transform var(--shift-duration) linear;
+	will-change: translate3d;
+}
+
+.carousel-auto .wrp .img-wrapper{
+    width: 300px;
+	height:300px;
+}
+
+.carousel-auto .wrp .img-wrapper img{
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+}
+
+ button#carousel-controls{
+	width:32px;
+	height:32px;
+	border-radius:50%;
+	background: #f1f1f1;
+	color:#373737;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.carousel-auto.paused button .pause{
+	display:none;
+}
+
+.carousel-auto:not(.paused) button .resume{
+	display:none;
+}
+</style>
+
+<script is:inline>
+const heroCarousel = document.getElementById("hero-carousel")
+const heroCarouselControls = document.getElementById("carousel-controls")
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let isCarouselRunning = !prefersReducedMotion;
+let carouselInterval;
+const intervalUpdateTime=100;
+const slideShiftValue=3;
+let slidePosition=0;
+
+heroCarousel.style.setProperty("--slide-shift",slideShiftValue+"px")
+function slideInterval(){
+	slidePosition-=slideShiftValue;
+heroCarousel.style.setProperty("--slide-shift",slidePosition+"px")
+}
+
+//interval initialization
+addEventListener('load', () => {
+	heroCarousel.style.setProperty("--shift-duration", intervalUpdateTime+"ms");
+	if(!prefersReducedMotion){
+	slideInterval();
+	carouselInterval = setInterval(slideInterval,intervalUpdateTime);
+	}else{
+	heroCarousel.classList.add("paused");
+	}
+});
+
+heroCarouselControls.onclick=function(){
+	if(isCarouselRunning){
+	clearInterval(carouselInterval)
+	}else{
+		slideInterval();
+		carouselInterval = setInterval(slideInterval,intervalUpdateTime)
+	}
+	heroCarousel.classList.toggle("paused");
+		isCarouselRunning=!isCarouselRunning;
+}
+</script>
+

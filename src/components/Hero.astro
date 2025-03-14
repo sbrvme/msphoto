@@ -1,0 +1,96 @@
+---
+import type { Link } from "../data/types"
+
+interface Props {
+	title?: string | undefined ;
+	body?: string | undefined;
+	links?: Link[] | undefined;
+}
+
+
+const {
+	title,
+	body,
+	links
+} = Astro.props;
+---
+
+	<section class="hero">
+	{title ||  <img src="/assets/monika_skierecka.svg" class="not-selectable"  id="hero-logo" alt="Logo Monika Skierecka"> 
+}
+	{body &&
+	<p>
+		{body}
+	</p>
+	}
+	{links &&
+	<ul class="hero--links">
+		{links.map((link)=>{
+return(
+		<li><a href={link.url}>{link.name}</a></li>
+)
+})
+		}
+	</ul>
+}
+
+	</section>
+
+		<!-- <li><a href="#">Instagram</a></li> -->
+		<!-- <li><a href="#">Facebook</a></li> -->
+		<!-- <li><a href="#">Kontakt ➝</a></li> -->
+
+<style>
+.hero{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 650px;
+	gap: 0.75rem;
+}
+
+#hero-logo{
+	height: 3rem;
+	height: clamp(1.5rem, 1.5rem + 1vw, 5rem);
+}
+
+.not-selectable{
+	user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.hero p{
+	font-size: 1.5rem;
+	text-align: center;
+	letter-spacing: 0.02em;
+	font-size: clamp(1rem,0.5rem + 1vw, 3rem);
+}
+
+.hero--links{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:1rem;
+	margin-top: 3rem;
+}
+
+
+.hero--links a{
+	font-size: 1.25rem;
+	font-size: clamp(1rem,0.2rem + 1vw, 3rem);
+	transition: border-bottom .1s ease-in-out;
+	padding-bottom: 5px;
+	border-bottom: 1px solid var(--color);
+}
+
+.hero--links a:hover{
+	text-decoration: none;
+	border-bottom: 5px solid var(--color);
+}
+
+</style>
