@@ -1,27 +1,27 @@
 /* Register your custom font family and tell the browser where to find it. */
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url(/fonts/Lato-LightItalic.woff2) format('woff2');
+  src: url(/fonts/Lato-LightItalic.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: italic;
   font-weight: normal;
   font-display: swap;
-  src: url(/fonts/Lato-Italic.woff2) format('woff2');
+  src: url(/fonts/Lato-Italic.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(/fonts/Lato-Light.woff2) format('woff2');
+  src: url(/fonts/Lato-Light.woff2) format("woff2");
 }
 
 /* ----------------- */
@@ -37,7 +37,7 @@
 :root {
   /* --bg-main: #f7f5ee; */
   --bg-main: #fffdf7;
-	--color: #171717;
+  --color: #171717;
   --navbar-height: 48px;
 }
 
@@ -45,9 +45,9 @@ html,
 body {
   min-height: 100%;
   background: var(--bg-main);
-	color: var(--color);
+  color: var(--color);
   /* font-family: "Poppins", sans-serif; */
-	font-family: 'Lato';
+  font-family: "Lato";
   touch-action: manipulation;
 }
 
@@ -62,8 +62,8 @@ button {
   color: inherit;
 }
 
-button:hover{
-	cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -75,8 +75,8 @@ a:hover {
   text-decoration: underline;
 }
 
-ul{
-	list-style: none;
+ul {
+  list-style: none;
 }
 
 .page-wrapper {
@@ -89,21 +89,21 @@ main.page-wrapper {
   padding-top: var(--navbar-height);
 }
 
-p{
-	max-width: 900px;
-	letter-spacing: -0.02em;
-	line-height: 1.2;
-	font-style: italic;
-	font-weight: 300;
-    min-width: min(600px, 100%);
-    width: 50vw;
+p {
+  max-width: 900px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 300;
+  min-width: min(600px, 100%);
+  width: 50vw;
 }
 
-.grid-12c{
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-gap: 1rem;
-    gap: 1rem;
+.grid-12c {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */

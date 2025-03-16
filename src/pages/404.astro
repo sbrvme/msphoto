@@ -1,15 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Hero from '../components/Hero.astro'
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
 
 const links = [
-	{
-		name:"Przejdź do strony głównej",
-		url:"/",
-	}
-]
+  {
+    name: "Przejdź do strony głównej",
+    url: "/",
+  },
+];
 ---
 
-<BaseLayout title='Strony nie znaleziono'>
-	<Hero body='Strona której szukasz nie została odnaleziona.' links={links}/>
+<BaseLayout title="Strony nie znaleziono">
+  <Hero body="Strona której szukasz nie została odnaleziona." links={links} />
 </BaseLayout>

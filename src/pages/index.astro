@@ -1,19 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import HomeSection from '../components/HomeSection.astro';
-import GalleryView from '../components/GalleryView.astro';
-import CarouselAuto from '../components/CarouselAuto.astro';
-import { heroLinks, SpecializationsSection } from '../data/siteData';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import HomeSection from "../components/HomeSection.astro";
+import GalleryView from "../components/GalleryView.astro";
+import CarouselAuto from "../components/CarouselAuto.astro";
+import { heroLinks, SpecializationsSection } from "../data/siteData";
 
-const heroBody="Pracuję z pasją, by uchwycić emocje, które kryją się w codziennych momentach. Moje zdjęcia to wspomnienia pełne autentyczności, które opowiadają Twoją historię w najpiękniejszy sposób.";
+const heroBody =
+  "Pracuję z pasją, by uchwycić emocje, które kryją się w codziennych momentach. Moje zdjęcia to wspomnienia pełne autentyczności, które opowiadają Twoją historię w najpiękniejszy sposób.";
 ---
 
-<BaseLayout title='Monika Skierecka Fotograf' description='Fotograf'>
-	<Hero body={heroBody} links={heroLinks}/>
-	<CarouselAuto/>
-	<HomeSection title='Moje Specjalizacje' >
-		<GalleryView data={SpecializationsSection}></GalleryView>
-	</HomeSection>
-
+<BaseLayout title="Monika Skierecka Fotograf" description="Fotograf">
+  <Hero body={heroBody} links={heroLinks} />
+  <CarouselAuto />
+  <HomeSection title="Moje Specjalizacje">
+    <GalleryView data={SpecializationsSection} />
+  </HomeSection>
 </BaseLayout>
